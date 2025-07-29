@@ -1,0 +1,11 @@
+firstName,lastName,dateOfBirth,zipCode,tobacco,employerContribution,memberContribution,planName,planType,metalLevel,carrier,dependents
+John,Doe,1985-03-15,97210,false,500,150,Blue Cross PPO,PPO,Gold,Blue Cross Blue Shield,
+Jane,Smith,1990-07-22,97204,false,450,200,Kaiser HMO Plan,HMO,Silver,Kaiser Permanente,"[{""relationship"":""spouse"",""firstName"":""Mike"",""lastName"":""Smith"",""dateOfBirth"":""1988-11-30"",""tobacco"":false},{""relationship"":""child"",""firstName"":""Emma"",""lastName"":""Smith"",""dateOfBirth"":""2020-04-10"",""tobacco"":false}]"
+Robert,Johnson,1978-12-01,97205,true,600,250,Aetna Choice,PPO,Platinum,Aetna,
+Maria,Garcia,1992-05-18,97001,false,400,175,United Healthcare,EPO,Bronze,UnitedHealth,"[{""relationship"":""child"",""firstName"":""Sofia"",""lastName"":""Garcia"",""dateOfBirth"":""2021-09-15"",""tobacco"":false}]"
+David,Wilson,1983-09-25,97210,false,550,225,Cigna Open Access,PPO,Gold,Cigna,
+Lisa,Anderson,1995-01-30,97205,false,425,180,Providence Health Plan,HMO,Silver,Providence,
+Michael,Brown,1987-06-12,97204,false,475,190,Regence BlueCross,PPO,Gold,Regence,"[{""relationship"":""spouse"",""firstName"":""Sarah"",""lastName"":""Brown"",""dateOfBirth"":""1989-03-20"",""tobacco"":false}]"
+Jennifer,Taylor,1991-11-08,97001,false,500,200,Moda Health,PPO,Silver,Moda,
+Christopher,Martinez,1980-04-05,97210,false,525,210,Health Net,HMO,Gold,Health Net,"[{""relationship"":""child"",""firstName"":""Carlos"",""lastName"":""Martinez"",""dateOfBirth"":""2019-07-22"",""tobacco"":false},{""relationship"":""child"",""firstName"":""Ana"",""lastName"":""Martinez"",""dateOfBirth"":""2022-02-14"",""tobacco"":false}]"
+Amanda,Davis,1993-08-17,97204,false,450,175,Pacific Source,EPO,Bronze,PacificSource,

@@ -1,0 +1,97 @@
+/* TopBar Component Styles */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-width); /* Width of sidebar from design-system.css */
+  right: 0;
+  height: 60px;
+  background: var(--background-white);
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-xl);
+  z-index: var(--z-topbar); /* Below navigation sidebar but above content */
+}
+
+/* Left Section */
+.top-bar-left {
+  flex: 1;
+}
+
+.page-title {
+  margin: 0;
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Center Section */
+.top-bar-center {
+  flex: 0 0 auto;
+}
+
+/* Right Section */
+.top-bar-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--spacing-md);
+}
+
+.help-button {
+  color: var(--text-medium);
+}
+
+.help-button:hover {
+  color: var(--text-dark);
+}
+
+/* User Menu */
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--primary-blue);
+  color: var(--background-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition: transform var(--transition-base);
+}
+
+.user-avatar:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .top-bar {
+    left: 0;
+    padding: 0 var(--spacing-md);
+  }
+  
+  .page-title {
+    font-size: var(--text-lg);
+  }
+  
+  .top-bar-center {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .help-button {
+    display: none;
+  }
+}

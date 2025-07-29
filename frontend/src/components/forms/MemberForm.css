@@ -1,0 +1,437 @@
+.member-form {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Form Sections */
+.form-section {
+  padding: 2rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.form-section:last-of-type {
+  border-bottom: none;
+}
+
+.form-section h3 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-section h3::before {
+  content: "📋";
+  font-size: 1.1rem;
+}
+
+.form-section:nth-child(2) h3::before {
+  content: "🏥";
+}
+
+.form-section:nth-child(3) h3::before {
+  content: "👨‍👩‍👧‍👦";
+}
+
+/* Form Layout */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  align-items: start;
+}
+
+.form-row:last-child {
+  margin-bottom: 0;
+}
+
+.form-row.single-column {
+  grid-template-columns: 1fr;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: fit-content;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Labels */
+.form-label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  height: 20px;
+  line-height: 1.2;
+}
+
+.form-label.required::after {
+  content: "*";
+  color: #dc2626;
+  font-weight: 700;
+}
+
+/* Inputs and Selects Enhancement */
+.member-form .form-input,
+.member-form .form-select {
+  height: 48px;
+  padding: 0 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.member-form .form-select {
+  padding-right: 2.5rem;
+  appearance: none;
+  cursor: pointer;
+}
+
+.member-form .form-input:focus,
+.member-form .form-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* ICHRA-specific field styling */
+.member-form .form-group:has(#householdIncome),
+.member-form .form-group:has(#familySize) {
+  position: relative;
+}
+
+.member-form .form-group:has(#householdIncome)::before,
+.member-form .form-group:has(#familySize)::before {
+  content: "ICHRA";
+  position: absolute;
+  top: -8px;
+  right: 8px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 1;
+}
+
+.member-form .form-group:has(#householdIncome) .form-input,
+.member-form .form-group:has(#familySize) .form-select {
+  border-color: #bfdbfe;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+}
+
+.member-form .form-group:has(#householdIncome) .form-input:focus,
+.member-form .form-group:has(#familySize) .form-select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Fix select wrapper alignment */
+.member-form .form-select-wrapper {
+  position: relative;
+  height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.member-form .form-select-wrapper .form-select {
+  width: 100%;
+  height: 100%;
+}
+
+.member-form .form-select-wrapper .form-select__icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #6b7280;
+  z-index: 1;
+}
+
+.member-form .form-input[type="date"] {
+  color: #6b7280;
+  padding-right: 1rem;
+}
+
+.member-form .form-input[type="date"]:focus,
+.member-form .form-input[type="date"]:valid {
+  color: #1f2937;
+}
+
+.member-form .form-input[type="number"] {
+  padding-right: 1rem;
+}
+
+/* Ensure consistent heights for all form elements */
+.member-form .form-group > * {
+  box-sizing: border-box;
+}
+
+.member-form .form-input,
+.member-form .form-select,
+.member-form .checkbox-label {
+  font-family: inherit;
+  line-height: 1.4;
+}
+
+/* Special alignment for checkbox form group */
+.member-form .form-group .checkbox-label {
+  margin-top: 0;
+  align-self: stretch;
+}
+
+/* Checkbox Styling */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  height: 48px;
+  padding: 0 1rem;
+  background: #f8fafc;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  color: #374151;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.checkbox-label:hover {
+  background: #f1f5f9;
+  border-color: #d1d5db;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 2px solid #d1d5db;
+  background: #ffffff;
+  cursor: pointer;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox-label input[type="checkbox"]:checked {
+  background: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.checkbox-label input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox-label input[type="checkbox"]:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Section Headers with Actions */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-header h3 {
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+/* Dependent Forms */
+.dependent-form {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.dependent-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dependent-header h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.no-dependents {
+  text-align: center;
+  padding: 2rem;
+  background: #f8fafc;
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background: #f8fafc;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Help Text */
+.form-help {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+/* Error States */
+.member-form .form-input.form-input--error,
+.member-form .form-select.form-select--error {
+  border-color: #dc2626;
+  background: #fef2f2;
+}
+
+.error-message {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.error-message::before {
+  content: "⚠️";
+  font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .member-form {
+    margin: 0;
+    border-radius: 0;
+  }
+  
+  .form-section {
+    padding: 1.5rem 1rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .form-actions {
+    padding: 1rem;
+    flex-direction: column-reverse;
+  }
+  
+  .form-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  
+  .dependent-header {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-section {
+    padding: 1rem 0.75rem;
+  }
+  
+  .form-section h3 {
+    font-size: 1.1rem;
+  }
+  
+  .checkbox-label {
+    padding: 0.75rem;
+  }
+  
+  .dependent-form {
+    padding: 1rem;
+  }
+}
+
+/* Focus States for Accessibility */
+.member-form *:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Loading States */
+.member-form.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.member-form.loading .form-input,
+.member-form.loading .form-select,
+.member-form.loading .checkbox-label {
+  background: #f3f4f6;
+  color: #9ca3af;
+} 

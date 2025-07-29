@@ -1,0 +1,164 @@
+.quote-options-modal {
+  padding: 1rem;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.saved-progress-alert {
+  display: flex;
+  gap: 1rem;
+  background: #E8F4FD;
+  border: 1px solid #2196F3;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.alert-icon {
+  font-size: 2rem;
+}
+
+.alert-content h4 {
+  margin: 0 0 0.5rem 0;
+  color: #1976D2;
+}
+
+.alert-content p {
+  margin: 0 0 1rem 0;
+  color: #666;
+}
+
+.continue-btn {
+  background: #2196F3;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.continue-btn:hover {
+  background: #1976D2;
+}
+
+.quote-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.quote-option-card {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.quote-option-card:hover {
+  border-color: #2196F3;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.quote-option-card.primary {
+  border-color: #2196F3;
+}
+
+.quote-option-card.primary:hover {
+  background: #E8F4FD;
+}
+
+.quote-option-card.secondary {
+  border-color: #4CAF50;
+}
+
+.quote-option-card.secondary:hover {
+  background: #E8F5E9;
+}
+
+.quote-option-card.tertiary {
+  border-color: #FF9800;
+}
+
+.quote-option-card.tertiary:hover {
+  background: #FFF3E0;
+}
+
+.option-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.option-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+
+.option-description {
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.option-arrow {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  color: #999;
+  transition: all 0.3s ease;
+}
+
+.quote-option-card:hover .option-arrow {
+  color: #2196F3;
+  transform: translateX(4px);
+}
+
+.modal-footer {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.help-text {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0;
+}
+
+.help-text a {
+  color: #2196F3;
+  text-decoration: none;
+}
+
+.help-text a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .quote-options-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .saved-progress-alert {
+    flex-direction: column;
+    text-align: center;
+  }
+}

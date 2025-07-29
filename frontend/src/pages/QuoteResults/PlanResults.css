@@ -1,0 +1,126 @@
+.plan-results {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+}
+
+.plan-results-empty {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}
+
+.plan-results-header {
+  margin-bottom: 20px;
+}
+
+.plan-results-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.plan-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.plan-card {
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.25rem;
+  transition: box-shadow 0.2s;
+}
+
+.plan-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.plan-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.plan-card-header h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #1a202c;
+}
+
+.plan-type {
+  background: #e7f3ff;
+  color: #0d6efd;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.plan-card-body {
+  margin-bottom: 16px;
+}
+
+.plan-premium {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.plan-premium .value {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a202c;
+}
+
+.plan-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.detail-item .label {
+  color: #718096;
+}
+
+.detail-item .value {
+  color: #1a202c;
+  font-weight: 500;
+}
+
+.plan-card-footer {
+  padding-top: 1rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.select-plan-btn {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.select-plan-btn:hover {
+  background: #0052a3;
+}

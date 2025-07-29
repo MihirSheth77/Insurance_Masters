@@ -1,0 +1,316 @@
+/**
+ * Accessibility Styles
+ * WCAG 2.1 AA Compliance Features
+ */
+
+/* Skip to Main Content Link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-blue);
+  color: var(--background-white);
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-decoration: none;
+  border-radius: 0 0 var(--radius-sm) 0;
+  z-index: var(--z-tooltip);
+  font-weight: 600;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--accent-yellow);
+  outline-offset: 2px;
+}
+
+/* Focus Styles */
+:focus {
+  outline: 3px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+/* Ensure interactive elements have focus indicators */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--primary-blue);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0, 86, 179, 0.2);
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  * {
+    forced-color-adjust: none;
+  }
+  
+  button,
+  .btn,
+  .card,
+  .form-input,
+  .form-select,
+  .form-textarea,
+  .modal,
+  .data-table {
+    border: 2px solid;
+  }
+  
+  .btn-primary {
+    border-color: transparent;
+  }
+  
+  :focus {
+    outline-width: 4px;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Color Contrast Enhancements */
+.text-low-contrast {
+  color: var(--text-medium);
+  font-weight: 500; /* Slightly heavier for better readability */
+}
+
+/* Ensure minimum touch target sizes (44x44px) */
+button,
+a,
+.btn,
+.nav-link,
+.clickable {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Icon buttons need padding for touch targets */
+.icon-button {
+  padding: var(--spacing-sm);
+}
+
+/* Form Field Labels */
+.form-label {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-sm);
+}
+
+.required-indicator {
+  color: var(--error-red);
+  margin-left: var(--spacing-xs);
+  font-weight: 700;
+  speak: literal-punctuation;
+}
+
+/* Error Messages */
+.error-message,
+.form-error {
+  color: var(--error-red);
+  font-weight: 500;
+  margin-top: var(--spacing-xs);
+}
+
+.error-message::before {
+  content: "Error: ";
+  font-weight: 700;
+}
+
+/* Success Messages */
+.success-message::before {
+  content: "Success: ";
+  font-weight: 700;
+}
+
+/* Loading States */
+[aria-busy="true"] {
+  cursor: progress;
+}
+
+/* Disabled States */
+:disabled,
+[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  filter: grayscale(0.3);
+}
+
+/* Table Headers */
+th {
+  font-weight: 700;
+  text-align: left;
+}
+
+th[aria-sort] {
+  cursor: pointer;
+}
+
+th[aria-sort="ascending"]::after {
+  content: " ↑";
+  font-weight: normal;
+}
+
+th[aria-sort="descending"]::after {
+  content: " ↓";
+  font-weight: normal;
+}
+
+/* Link Underlines for Better Visibility */
+a:not(.btn):not(.nav-link) {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+a:not(.btn):not(.nav-link):hover {
+  text-decoration-thickness: 3px;
+}
+
+/* Keyboard Navigation Indicators */
+.keyboard-navigating *:focus {
+  outline: 4px solid var(--accent-yellow);
+  outline-offset: 2px;
+}
+
+/* Live Region Styles */
+.sr-only-focusable:focus {
+  position: absolute;
+  width: auto;
+  height: auto;
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  background-color: var(--background-white);
+  box-shadow: var(--shadow-lg);
+  z-index: var(--z-tooltip);
+}
+
+/* Aria Live Regions */
+[aria-live="polite"] {
+  position: relative;
+}
+
+[aria-live="assertive"] {
+  position: relative;
+  font-weight: 600;
+}
+
+/* Color Blind Friendly Indicators */
+.status-indicator {
+  position: relative;
+  padding-left: 24px;
+}
+
+.status-indicator::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.status-indicator.success::before {
+  background-color: var(--success-green);
+  border: 2px solid var(--success-green);
+}
+
+.status-indicator.success::after {
+  content: '✓';
+  position: absolute;
+  left: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status-indicator.error::before {
+  background-color: var(--error-red);
+  border: 2px solid var(--error-red);
+}
+
+.status-indicator.error::after {
+  content: '✕';
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status-indicator.warning::before {
+  background-color: var(--warning-orange);
+  border: 2px solid var(--warning-orange);
+}
+
+.status-indicator.warning::after {
+  content: '!';
+  position: absolute;
+  left: 7px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Print Styles */
+@media print {
+  .no-print,
+  .navigation-sidebar,
+  .mobile-menu-toggle,
+  .notification-container {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: black;
+    background: white;
+  }
+  
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+  
+  .print-break-after {
+    page-break-after: always;
+  }
+  
+  .print-break-before {
+    page-break-before: always;
+  }
+}

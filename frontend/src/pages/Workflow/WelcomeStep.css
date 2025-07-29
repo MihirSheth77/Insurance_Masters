@@ -1,0 +1,282 @@
+/* Welcome Step Styles */
+
+.welcome-step {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Welcome Header */
+.welcome-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.welcome-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--deep-navy);
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.welcome-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-medium);
+  margin: 0;
+}
+
+/* Quote Type Selection */
+.quote-type-selection {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0 0 2rem 0;
+  text-align: center;
+}
+
+.quote-type-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.quote-type-card {
+  background: white;
+  border: 2px solid var(--border-light);
+  border-radius: 12px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-type-card:hover {
+  border-color: var(--primary-blue);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.quote-type-card.selected {
+  border-color: var(--primary-blue);
+  background-color: rgba(13, 110, 253, 0.05);
+}
+
+.quote-type-card.selected::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-blue);
+}
+
+.card-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, rgba(13, 110, 253, 0.1), rgba(13, 110, 253, 0.2));
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: var(--primary-blue);
+  margin-bottom: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0 0 0.75rem 0;
+}
+
+.card-description {
+  font-size: 1rem;
+  color: var(--text-medium);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.5;
+}
+
+.card-meta {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.time-estimate,
+.savings-estimate {
+  color: var(--text-medium);
+}
+
+.selection-indicator {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  text-align: center;
+  padding: 0.5rem;
+  background-color: rgba(13, 110, 253, 0.1);
+  border-radius: 6px;
+}
+
+.quote-type-card:not(.selected) .selection-indicator {
+  background-color: var(--background-light);
+  color: var(--text-medium);
+}
+
+/* Benefits Section */
+.benefits-section {
+  background: var(--background-light);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.benefits-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.benefits-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.9375rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+.benefit-check {
+  color: var(--success-green);
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Welcome Footer */
+.welcome-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.progress-info {
+  flex: 1;
+}
+
+.progress-text {
+  font-size: 0.9375rem;
+  color: var(--text-medium);
+  margin: 0;
+}
+
+.progress-text strong {
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+/* Button Customization */
+.welcome-footer .btn--large {
+  min-width: 200px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .welcome-step {
+    padding: 1rem;
+  }
+
+  .welcome-title {
+    font-size: 2rem;
+  }
+
+  .welcome-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .quote-type-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .quote-type-card {
+    padding: 1.5rem;
+  }
+
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+  }
+
+  .benefits-list {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-footer {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .welcome-footer .btn--large {
+    width: 100%;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.welcome-step > * {
+  animation: fadeIn 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.welcome-header {
+  animation-delay: 0.1s;
+}
+
+.quote-type-selection {
+  animation-delay: 0.2s;
+}
+
+.benefits-section {
+  animation-delay: 0.3s;
+}
+
+.welcome-footer {
+  animation-delay: 0.4s;
+}
